@@ -12,80 +12,63 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
 
-    <style>
-        body {
-            color: #172554;
-        }
-
-        .navbar-custom {
-            background-color: #172554;
-        }
-
-        .section-slate {
-            background-color: #E2E8F0;
-        }
-
-        .section-blue {
-            background-color: #172554;
-            color: #FFFFFF;
-        }
-
-        .btn-custom {
-            background-color: #3B82F6;
-            color: #FFFFFF;
-        }
-
-        .profile-navbar {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-        }
-    </style>
-
 </head>
 
 <body>
 
     <!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-custom py-4">
 
-    <div class="container">
+    <nav class="navbar navbar-expand-lg bg-primary py-4">
 
-        <a class="navbar-brand" href="#home">
+        <div class="container">
 
-            <img src="F:\MHS-8A1\Ilham_20242027_4\img\Foto jas ATMI.jpg"
-                class="rounded-circle profile-navbar"
-                alt="Profile">
+            <a class="navbar-brand" href="#home">
 
-        </a>
+                <img src="img/Foto jas ATMI.jpg" width="40" height="40" class="rounded-circle object-fit-cover"
+                    alt="Profile">
 
-        <div class="navbar-nav">
-
-            <a class="nav-link text-white" href="#home">
-                Home
             </a>
 
-            <a class="nav-link text-white" href="#services">
-                Services
-            </a>
+            <!-- Navbar Button untuk layar kecil -->
 
-            <a class="nav-link text-white" href="#portfolio">
-                Portfolio
-            </a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 
-            <a class="nav-link text-white" href="#about">
-                About
-            </a>
+                <span class="navbar-toggler-icon"></span>
 
-            <a class="nav-link text-white" href="#contact">
-                Contact
-            </a>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <div class="navbar-nav ms-auto">
+
+                    <a class="nav-link text-white" href="#home">
+                        Home
+                    </a>
+
+                    <a class="nav-link text-white" href="#services">
+                        Services
+                    </a>
+
+                    <a class="nav-link text-white" href="#portfolio">
+                        Portfolio
+                    </a>
+
+                    <a class="nav-link text-white" href="#about">
+                        About
+                    </a>
+
+                    <a class="nav-link text-white" href="#contact">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
-
-</nav>
+    </nav>
 
 
     <!-- ================= HOME ================= -->
@@ -96,7 +79,7 @@
 
             <div class="row align-items-center">
 
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
 
                     <h1 class="display-4 fw-bold">
                         Hello, I'm Ilham
@@ -117,11 +100,9 @@
 
                 </div>
 
+                <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
 
-                <div class="col-md-6 text-center">
-
-                    <img src="F:\MHS-8A1\Ilham_20242027_4\img\Foto jas ATMI.jpg" class="img-fluid rounded"
-                        alt="Profile">
+                    <img src="img/Foto jas ATMI.jpg" class="img-fluid rounded" alt="Profile">
 
                 </div>
 
@@ -134,9 +115,10 @@
 
     <!-- ================= SERVICES ================= -->
 
-    <section id="services" class="py-5 section-slate">
+    <section id="services" class="py-5 bg-light">
 
         <div class="container">
+
             <div class="text-center mb-5">
 
                 <h2>
@@ -149,11 +131,11 @@
 
             </div>
 
+            <div class="row g-4 justify-content-center">
 
+                <!-- SERVICE 1 -->
 
-            <div class="row g-4">->
-
-                <div class="col-12 col-md-6 col-lg-3 mx-auto">
+                <div class="col-12 col-md-6 col-lg-3">
 
                     <div class="card h-100">
 
@@ -173,7 +155,11 @@
                     </div>
 
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mx-auto">
+
+
+                <!-- SERVICE 2 -->
+
+                <div class="col-12 col-md-6 col-lg-3">
 
                     <div class="card h-100">
 
@@ -193,7 +179,11 @@
                     </div>
 
                 </div>
-      <div class="col-12 col-md-6 col-lg-3 mx-auto">
+
+
+                <!-- SERVICE 3 -->
+
+                <div class="col-12 col-md-6 col-lg-3">
 
                     <div class="card h-100">
 
@@ -213,7 +203,11 @@
                     </div>
 
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mx-auto">
+
+
+                <!-- SERVICE 4 -->
+
+                <div class="col-12 col-md-6 col-lg-3">
 
                     <div class="card h-100">
 
@@ -238,17 +232,15 @@
 
         </div>
 
-        </div>
-
     </section>
 
 
-
-
+    <!-- ================= PORTFOLIO ================= -->
 
     <section id="portfolio" class="py-5">
 
         <div class="container">
+
             <div class="text-center mb-5">
 
                 <h2>
@@ -260,7 +252,8 @@
                 </p>
 
             </div>
-            <div class="row g-4">
+
+            <div class="row g-4 justify-content-center">
 
                 <!-- PROJECT 1 -->
 
@@ -286,6 +279,10 @@
                     </div>
 
                 </div>
+
+
+                <!-- PROJECT 2 -->
+
                 <div class="col-12 col-md-6 col-lg-3">
 
                     <div class="card h-100">
@@ -308,6 +305,10 @@
                     </div>
 
                 </div>
+
+
+                <!-- PROJECT 3 -->
+
                 <div class="col-12 col-md-6 col-lg-3">
 
                     <div class="card h-100">
@@ -330,9 +331,13 @@
                     </div>
 
                 </div>
+
+
+                <!-- PROJECT 4 -->
+
                 <div class="col-12 col-md-6 col-lg-3">
 
-                    <div class="card h-100 text">
+                    <div class="card h-100">
 
                         <img src="img/milling.jpg" class="card-img-top" alt="Turning and Milling Project">
 
@@ -360,10 +365,9 @@
     </section>
 
 
+    <!-- ================= ABOUT ================= -->
 
-
-
-    <section id="about" class="py-5 section-slate">
+    <section id="about" class="py-5 bg-light">
 
         <div class="container">
 
@@ -379,9 +383,9 @@
 
             </div>
 
-
             <div class="row align-items-center">
-                <div class="col-md-6">
+
+                <div class="col-12 col-md-6">
 
                     <h3>
                         Mechatronics Engineering
@@ -398,12 +402,16 @@
                         projects that combine mechanical, electrical,
                         and programming skills.
                     </p>
+
                 </div>
-                <div class="col-md-6">
+
+
+                <div class="col-12 col-md-6">
 
                     <h3>
                         Education
                     </h3>
+
                     <div class="card mb-3">
 
                         <div class="card-body">
@@ -419,6 +427,8 @@
                         </div>
 
                     </div>
+
+
                     <div class="card mb-3">
 
                         <div class="card-body">
@@ -434,6 +444,8 @@
                         </div>
 
                     </div>
+
+
                     <div class="card mb-3">
 
                         <div class="card-body">
@@ -449,6 +461,8 @@
                         </div>
 
                     </div>
+
+
                     <div class="card mb-3">
 
                         <div class="card-body">
@@ -474,12 +488,12 @@
     </section>
 
 
+    <!-- ================= CONTACT ================= -->
 
-
-
-    <section id="contact" class="py-5 section-blue">
+    <section id="contact" class="py-5 bg-primary text-white">
 
         <div class="container">
+
             <div class="text-center mb-5">
 
                 <h2>
@@ -491,36 +505,44 @@
                 </p>
 
             </div>
+
             <div class="row justify-content-center">
 
-                <div class="col-md-8">
+                <div class="col-12 col-md-8">
 
                     <form>
+
                         <div class="row g-3">
 
-                            <div class="col-md-6">
+                            <div class="col-12 col-md-6">
 
                                 <input type="text" class="form-control" placeholder="Your Name">
 
                             </div>
 
 
-                            <div class="col-md-6">
+                            <div class="col-12 col-md-6">
 
                                 <input type="email" class="form-control" placeholder="Your Email">
 
                             </div>
 
                         </div>
+
+
                         <div class="mt-3">
 
                             <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
 
                         </div>
+
+
                         <div class="mt-3">
 
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-light">
+
                                 Send Message
+
                             </button>
 
                         </div>
@@ -528,7 +550,7 @@
                     </form>
 
 
-
+                    <!-- SOCIAL MEDIA -->
 
                     <div class="text-center mt-5">
 
@@ -539,25 +561,32 @@
 
                         <div class="mt-4">
 
+                            <!-- INSTAGRAM -->
+
                             <div class="d-flex justify-content-center align-items-center mb-3">
 
-                                <img src="F:\MHS-8A1\Ilham_20242027_4\img\ig.png" width="30" class="me-2"
-                                    alt="Instagram">
+                                <img src="img/ig.png" width="30" height="30" class="me-2" alt="Instagram">
 
-                                <a href="https://www.instagram.com/days.ub?stkn=Z3o1Z3pwZ3c4Z3oz">
+                                <a href="https://www.instagram.com/days.ub?stkn=Z3o1Z3pwZ3c4Z3oz" class="text-white">
+
                                     Instagram
+
                                 </a>
 
                             </div>
 
 
+                            <!-- LINKEDIN -->
+
                             <div class="d-flex justify-content-center align-items-center">
 
-                                <img src="img/linkedin.png" width="30" class="me-2" alt="LinkedIn">
+                                <img src="img/linkedin.png" width="30" height="30" class="me-2" alt="LinkedIn">
 
-                                <a
-                                    href="https://www.linkedin.com/in/ilham-hari-subroto-5021b6368?utm_source=share_via&utm_content=profile&utm_medium=member_android">
+                                <a href="https://www.linkedin.com/in/ilham-hari-subroto-5021b6368?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                                    class="text-white">
+
                                     LinkedIn
+
                                 </a>
 
                             </div>
@@ -568,7 +597,14 @@
 
                 </div>
 
+            </div>
+
+        </div>
+
     </section>
+
+
+    <!-- Bootstrap JS -->
 
     <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
 
