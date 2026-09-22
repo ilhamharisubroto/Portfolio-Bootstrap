@@ -12,116 +12,165 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
 
-    <style>
-        body {
-            color: #172554;
-        }
-
-        .navbar-custom {
-            background-color: #172554;
-        }
-
-        .section-slate {
-            background-color: #E2E8F0;
-        }
-
-        .section-blue {
-            background-color: #172554;
-            color: #FFFFFF;
-        }
-
-        .btn-custom {
-            background-color: #3B82F6;
-            color: #FFFFFF;
-        }
-
-        .profile-navbar {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-        }
-    </style>
+    <!-- CSS Custom -->
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/myy.css">
 
 </head>
 
 <body>
 
     <!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-custom py-4">
 
-    <div class="container">
-
-        <a class="navbar-brand" href="#home">
-
-            <img src="F:\MHS-8A1\Ilham_20242027_4\img\Foto jas ATMI.jpg"
-                class="rounded-circle profile-navbar"
-                alt="Profile">
-
-        </a>
-
-        <div class="navbar-nav">
-
-            <a class="nav-link text-white" href="#home">
-                Home
-            </a>
-
-            <a class="nav-link text-white" href="#services">
-                Services
-            </a>
-
-            <a class="nav-link text-white" href="#portfolio">
-                Portfolio
-            </a>
-
-            <a class="nav-link text-white" href="#about">
-                About
-            </a>
-
-            <a class="nav-link text-white" href="#contact">
-                Contact
-            </a>
-
-        </div>
-
-    </div>
-
-</nav>
-
-
-    <!-- ================= HOME ================= -->
-
-    <section id="home" class="py-5">
+    <nav class="navbar navbar-expand-lg navbar-custom py-4">
 
         <div class="container">
 
-            <div class="row align-items-center">
+            <a class="navbar-brand text-white fw-bold" href="#home">
+                MY PROFILE
+            </a>
 
-                <div class="col-md-6">
+            <button class="navbar-toggler bg-light"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
 
-                    <h1 class="display-4 fw-bold">
-                        Hello, I'm Ilham
-                    </h1>
+                <span class="navbar-toggler-icon"></span>
 
-                    <p class="lead">
-                        Mechatronics Engineering Student
-                    </p>
+            </button>
 
-                    <p>
-                        Interested in automation, electronics,
-                        programming, and engineering.
-                    </p>
+            <div class="collapse navbar-collapse" id="navbarNav">
 
-                    <a href="#services" class="btn btn-primary">
-                        My Services
+                <div class="navbar-nav ms-auto gap-2">
+
+                    <a class="nav-link text-white px-3" href="#home">
+                        Home
+                    </a>
+
+                    <a class="nav-link text-white px-3" href="#services">
+                        Services
+                    </a>
+
+                    <a class="nav-link text-white px-3" href="#portfolio">
+                        Portfolio
+                    </a>
+
+                    <a class="nav-link text-white px-3" href="#about">
+                        About
+                    </a>
+
+                    <a class="nav-link text-white px-3" href="#contact">
+                        Contact
                     </a>
 
                 </div>
 
+            </div>
 
-                <div class="col-md-6 text-center">
+        </div>
 
-                    <img src="F:\MHS-8A1\Ilham_20242027_4\img\Foto jas ATMI.jpg" class="img-fluid rounded"
-                        alt="Profile">
+    </nav>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="py-5 hero">
+
+        <div class="hero-decoration"></div>
+
+        <div class="hero-decoration-two"></div>
+
+        <div class="container py-5">
+
+            <div class="row align-items-center">
+
+                <div class="col-12 col-md-6">
+
+                    <span class="badge-navy">
+                        MECHATRONICS ENGINEERING
+                    </span>
+
+                    <h1 class="display-4 fw-bold mt-4">
+                        Hello, I'm Ilham
+                    </h1>
+
+                    <p class="lead fw-semibold">
+                        Mechatronics Engineering Student
+                    </p>
+
+                    <p class="text-secondary">
+                        Interested in automation, electronics,
+                        programming, and engineering.
+                    </p>
+
+                    <div class="d-flex gap-3 flex-wrap mt-4">
+
+                        <a href="#services" class="btn btn-navy px-4 py-2">
+                            Explore Services
+                        </a>
+
+                        <a href="#portfolio" class="btn btn-outline-dark px-4 py-2">
+                            View Portfolio
+                        </a>
+
+                    </div>
+
+                    <div class="d-flex gap-4 mt-5">
+
+                        <div>
+
+                            <h4 class="fw-bold mb-0">
+                                04
+                            </h4>
+
+                            <small class="text-secondary">
+                                Services
+                            </small>
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="fw-bold mb-0">
+                                04
+                            </h4>
+
+                            <small class="text-secondary">
+                                Projects
+                            </small>
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="fw-bold mb-0">
+                                01
+                            </h4>
+
+                            <small class="text-secondary">
+                                Engineering Field
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE PHOTO -->
+
+                <div class="col-12 col-md-6 text-center mt-5 mt-md-0">
+
+                    <div class="profile-frame">
+
+                        <img src="img/Foto jas ATMI.jpg"
+                            class="img-fluid rounded-circle shadow-lg hero-image"
+                            alt="Profile">
+
+                    </div>
 
                 </div>
 
@@ -130,42 +179,66 @@
         </div>
 
     </section>
+
 
 
     <!-- ================= SERVICES ================= -->
 
-    <section id="services" class="py-5 section-slate">
+    <section id="services" class="py-5 bg-light">
 
-        <div class="container">
+        <div class="container py-4">
+
             <div class="text-center mb-5">
 
-                <h2>
+                <p class="text-secondary fw-semibold mb-1">
+                    WHAT I CAN DO
+                </p>
+
+                <h2 class="fw-bold">
                     My Services
                 </h2>
 
-                <p>
-                    Some engineering services that I can provide.
+                <div class="section-title-line"></div>
+
+                <p class="text-secondary">
+                    Engineering skills and services that I can provide.
                 </p>
 
             </div>
 
 
+            <div class="row g-4">
 
-            <div class="row g-4">->
 
-                <div class="col-12 col-md-6 col-lg-3 mx-auto">
+                <!-- SERVICE 1 -->
 
-                    <div class="card h-100">
+                <div class="col-12 col-md-6 col-lg-3">
 
-                        <div class="card-body text-center">
+                    <div class="card service-card h-100 shadow-sm">
 
-                            <h5 class="card-title">
+                        <div class="card-body p-4">
+
+                            <div class="d-flex justify-content-between">
+
+                                <div class="service-icon">
+                                    01
+                                </div>
+
+                                <span class="service-number">
+                                    01
+                                </span>
+
+                            </div>
+
+                            <h5 class="fw-bold">
                                 PLC & Automation
                             </h5>
 
-                            <p class="card-text">
+                            <p class="text-secondary">
                                 PLC programming, industrial automation,
-                                and control systems.
+                                sensor integration, actuator control,
+                                troubleshooting, and basic automation
+                                system development.
                             </p>
 
                         </div>
@@ -173,19 +246,36 @@
                     </div>
 
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mx-auto">
 
-                    <div class="card h-100">
 
-                        <div class="card-body text-center">
+                <!-- SERVICE 2 -->
 
-                            <h5 class="card-title">
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="card service-card h-100 shadow-sm">
+
+                        <div class="card-body p-4">
+
+                            <div class="d-flex justify-content-between">
+
+                                <div class="service-icon">
+                                    02
+                                </div>
+
+                                <span class="service-number">
+                                    02
+                                </span>
+
+                            </div>
+
+                            <h5 class="fw-bold">
                                 Electrical Design
                             </h5>
 
-                            <p class="card-text">
+                            <p class="text-secondary">
                                 Electrical schematic, circuit design,
-                                and control panel design.
+                                control panel design, component selection,
+                                and basic control system planning.
                             </p>
 
                         </div>
@@ -193,19 +283,36 @@
                     </div>
 
                 </div>
-      <div class="col-12 col-md-6 col-lg-3 mx-auto">
 
-                    <div class="card h-100">
 
-                        <div class="card-body text-center">
+                <!-- SERVICE 3 -->
 
-                            <h5 class="card-title">
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="card service-card h-100 shadow-sm">
+
+                        <div class="card-body p-4">
+
+                            <div class="d-flex justify-content-between">
+
+                                <div class="service-icon">
+                                    03
+                                </div>
+
+                                <span class="service-number">
+                                    03
+                                </span>
+
+                            </div>
+
+                            <h5 class="fw-bold">
                                 Electrical Wiring
                             </h5>
 
-                            <p class="card-text">
-                                Control wiring, panel wiring,
-                                sensor wiring, and installation.
+                            <p class="text-secondary">
+                                Control wiring, panel wiring, sensor wiring,
+                                component installation, and electrical
+                                troubleshooting.
                             </p>
 
                         </div>
@@ -213,19 +320,36 @@
                     </div>
 
                 </div>
-                <div class="col-12 col-md-6 col-lg-3 mx-auto">
 
-                    <div class="card h-100">
 
-                        <div class="card-body text-center">
+                <!-- SERVICE 4 -->
 
-                            <h5 class="card-title">
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="card service-card h-100 shadow-sm">
+
+                        <div class="card-body p-4">
+
+                            <div class="d-flex justify-content-between">
+
+                                <div class="service-icon">
+                                    04
+                                </div>
+
+                                <span class="service-number">
+                                    04
+                                </span>
+
+                            </div>
+
+                            <h5 class="fw-bold">
                                 Turning & Milling
                             </h5>
 
-                            <p class="card-text">
-                                Conventional machining, turning,
-                                milling, and workshop practices.
+                            <p class="text-secondary">
+                                Conventional machining, turning, milling,
+                                workpiece preparation, measurement,
+                                and manufacturing processes.
                             </p>
 
                         </div>
@@ -235,8 +359,6 @@
                 </div>
 
             </div>
-
-        </div>
 
         </div>
 
@@ -244,39 +366,55 @@
 
 
 
-
+    <!-- ================= PORTFOLIO ================= -->
 
     <section id="portfolio" class="py-5">
 
-        <div class="container">
+        <div class="container py-4">
+
             <div class="text-center mb-5">
 
-                <h2>
+                <p class="text-secondary fw-semibold mb-1">
+                    MY WORK
+                </p>
+
+                <h2 class="fw-bold">
                     My Portfolio
                 </h2>
 
-                <p>
+                <div class="section-title-line"></div>
+
+                <p class="text-secondary">
                     Some of my engineering projects and experiences.
                 </p>
 
             </div>
+
+
             <div class="row g-4">
+
 
                 <!-- PROJECT 1 -->
 
                 <div class="col-12 col-md-6 col-lg-3">
 
-                    <div class="card h-100">
+                    <div class="card portfolio-card h-100 shadow-sm">
 
-                        <img src="img/otomasi.jpg" class="card-img-top" alt="PLC Automation Project">
+                        <img src="img/otomasi.jpg"
+                            class="card-img-top portfolio-image"
+                            alt="PLC Automation Project">
 
-                        <div class="card-body">
+                        <div class="card-body p-4">
 
-                            <h5 class="card-title">
+                            <small class="text-secondary">
+                                PROJECT 01
+                            </small>
+
+                            <h5 class="fw-bold mt-2">
                                 PLC & Automation
                             </h5>
 
-                            <p class="card-text">
+                            <p class="text-secondary">
                                 PLC programming and industrial
                                 automation project.
                             </p>
@@ -286,19 +424,29 @@
                     </div>
 
                 </div>
+
+
+                <!-- PROJECT 2 -->
+
                 <div class="col-12 col-md-6 col-lg-3">
 
-                    <div class="card h-100">
+                    <div class="card portfolio-card h-100 shadow-sm">
 
-                        <img src="img/cswa.jpg" class="card-img-top" alt="Electrical Design Project">
+                        <img src="img/cswa.jpg"
+                            class="card-img-top portfolio-image"
+                            alt="Electrical Design Project">
 
-                        <div class="card-body">
+                        <div class="card-body p-4">
 
-                            <h5 class="card-title">
+                            <small class="text-secondary">
+                                PROJECT 02
+                            </small>
+
+                            <h5 class="fw-bold mt-2">
                                 Electrical Design
                             </h5>
 
-                            <p class="card-text">
+                            <p class="text-secondary">
                                 Electrical schematic and control
                                 panel design project.
                             </p>
@@ -308,19 +456,29 @@
                     </div>
 
                 </div>
+
+
+                <!-- PROJECT 3 -->
+
                 <div class="col-12 col-md-6 col-lg-3">
 
-                    <div class="card h-100">
+                    <div class="card portfolio-card h-100 shadow-sm">
 
-                        <img src="img/wiring.jpg" class="card-img-top" alt="Electrical Wiring Project">
+                        <img src="img/wiring.jpg"
+                            class="card-img-top portfolio-image"
+                            alt="Electrical Wiring Project">
 
-                        <div class="card-body">
+                        <div class="card-body p-4">
 
-                            <h5 class="card-title">
+                            <small class="text-secondary">
+                                PROJECT 03
+                            </small>
+
+                            <h5 class="fw-bold mt-2">
                                 Electrical Wiring
                             </h5>
 
-                            <p class="card-text">
+                            <p class="text-secondary">
                                 Control wiring, sensor wiring,
                                 and electrical installation project.
                             </p>
@@ -330,19 +488,29 @@
                     </div>
 
                 </div>
+
+
+                <!-- PROJECT 4 -->
+
                 <div class="col-12 col-md-6 col-lg-3">
 
-                    <div class="card h-100 text">
+                    <div class="card portfolio-card h-100 shadow-sm">
 
-                        <img src="img/milling.jpg" class="card-img-top" alt="Turning and Milling Project">
+                        <img src="img/milling.jpg"
+                            class="card-img-top portfolio-image"
+                            alt="Turning and Milling Project">
 
-                        <div class="card-body">
+                        <div class="card-body p-4">
 
-                            <h5 class="card-title">
+                            <small class="text-secondary">
+                                PROJECT 04
+                            </small>
+
+                            <h5 class="fw-bold mt-2">
                                 Turning & Milling
                             </h5>
 
-                            <p class="card-text">
+                            <p class="text-secondary">
                                 Conventional machining project
                                 involving turning and milling.
                             </p>
@@ -361,105 +529,358 @@
 
 
 
+    <!-- ================= ABOUT ================= -->
 
+    <section id="about" class="py-5 bg-light">
 
-    <section id="about" class="py-5 section-slate">
-
-        <div class="container">
+        <div class="container py-4">
 
             <div class="text-center mb-5">
 
-                <h2>
+                <p class="text-secondary fw-semibold mb-1">
+                    ABOUT ME
+                </p>
+
+                <h2 class="fw-bold">
                     About Me
                 </h2>
 
-                <p>
+                <div class="section-title-line"></div>
+
+                <p class="text-secondary">
                     A short introduction about me.
                 </p>
 
             </div>
 
 
-            <div class="row align-items-center">
-                <div class="col-md-6">
+            <div class="row g-5">
 
-                    <h3>
-                        Mechatronics Engineering
+
+                <!-- ABOUT TEXT -->
+
+                <div class="col-12 col-md-6">
+
+                    <span class="badge-navy">
+                        MECHATRONICS
+                    </span>
+
+                    <h3 class="fw-bold mt-3">
+                        Engineering & Technology
                     </h3>
 
-                    <p>
+                    <p class="text-secondary">
                         I am a Mechatronics Engineering student
                         interested in automation, electronics,
                         electrical systems, and programming.
                     </p>
 
-                    <p>
+                    <p class="text-secondary">
                         I enjoy learning and working on engineering
                         projects that combine mechanical, electrical,
                         and programming skills.
                     </p>
-                </div>
-                <div class="col-md-6">
 
-                    <h3>
+
+                    <div class="tech-line"></div>
+
+
+                    <div class="row">
+
+                        <div class="col-6">
+
+                            <h5 class="fw-bold">
+                                Automation
+                            </h5>
+
+                            <p class="text-secondary">
+                                PLC and control systems
+                            </p>
+
+                        </div>
+
+                        <div class="col-6">
+
+                            <h5 class="fw-bold">
+                                Electronics
+                            </h5>
+
+                            <p class="text-secondary">
+                                Electrical and electronic systems
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EDUCATION -->
+
+                <div class="col-12 col-md-6">
+
+                    <h3 class="fw-bold mb-4">
                         Education
                     </h3>
-                    <div class="card mb-3">
 
-                        <div class="card-body">
+                    <div class="timeline">
 
-                            <h5 class="card-title">
-                                SDIP Ummahat Simo
-                            </h5>
 
-                            <p class="card-text">
-                                Elementary School
-                            </p>
+                        <div class="timeline-item">
+
+                            <div class="card education-card shadow-sm">
+
+                                <div class="card-body">
+
+                                    <h5 class="fw-bold mb-1">
+                                        SDIP Ummahat Simo
+                                    </h5>
+
+                                    <small class="text-secondary">
+                                        Elementary School
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="card education-card shadow-sm">
+
+                                <div class="card-body">
+
+                                    <h5 class="fw-bold mb-1">
+                                        SMPN 1 Simo
+                                    </h5>
+
+                                    <small class="text-secondary">
+                                        Junior High School
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="card education-card shadow-sm">
+
+                                <div class="card-body">
+
+                                    <h5 class="fw-bold mb-1">
+                                        SMAN 1 Simo
+                                    </h5>
+
+                                    <small class="text-secondary">
+                                        Senior High School
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <div class="card education-card shadow-sm">
+
+                                <div class="card-body">
+
+                                    <h5 class="fw-bold mb-1">
+                                        Politeknik ATMI Surakarta
+                                    </h5>
+
+                                    <small class="text-secondary">
+                                        Diploma in Mechatronics Engineering
+                                    </small>
+
+                                </div>
+
+                            </div>
 
                         </div>
 
                     </div>
-                    <div class="card mb-3">
 
-                        <div class="card-body">
+                </div>
 
-                            <h5 class="card-title">
-                                SMPN 1 Simo
-                            </h5>
+            </div>
 
-                            <p class="card-text">
-                                Junior High School
-                            </p>
 
-                        </div>
+            <!-- ================= CHART ================= -->
+
+            <div class="mt-5 pt-4">
+
+                <h3 class="text-center fw-bold">
+                    My Skills
+                </h3>
+
+                <p class="text-center text-secondary">
+                    Static data visualization using Chart.js
+                </p>
+
+                <div class="card shadow-sm border-0 p-4 mt-4">
+
+                    <canvas id="aboutChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="py-5 section-navy text-white">
+
+        <div class="container py-4">
+
+            <div class="text-center mb-5">
+
+                <p class="text-white-50 fw-semibold mb-1">
+                    GET IN TOUCH
+                </p>
+
+                <h2 class="fw-bold">
+                    Contact Me
+                </h2>
+
+                <div class="contact-line"></div>
+
+                <p class="text-white-50">
+                    Feel free to contact me for more information.
+                </p>
+
+            </div>
+
+
+            <div class="row justify-content-center">
+
+                <div class="col-12 col-md-8">
+
+                    <div class="contact-box">
+
+                        <form>
+
+                            <div class="row g-3">
+
+                                <div class="col-12 col-md-6">
+
+                                    <label class="form-label">
+                                        Name
+                                    </label>
+
+                                    <input type="text"
+                                        class="form-control"
+                                        placeholder="Your Name">
+
+                                </div>
+
+
+                                <div class="col-12 col-md-6">
+
+                                    <label class="form-label">
+                                        Email
+                                    </label>
+
+                                    <input type="email"
+                                        class="form-control"
+                                        placeholder="Your Email">
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mt-3">
+
+                                <label class="form-label">
+                                    Message
+                                </label>
+
+                                <textarea class="form-control"
+                                    rows="5"
+                                    placeholder="Your Message"></textarea>
+
+                            </div>
+
+
+                            <div class="mt-3">
+
+                                <button type="submit"
+                                    class="btn btn-light px-4">
+
+                                    Send Message
+
+                                </button>
+
+                            </div>
+
+                        </form>
 
                     </div>
-                    <div class="card mb-3">
 
-                        <div class="card-body">
 
-                            <h5 class="card-title">
-                                SMAN 1 Simo
-                            </h5>
+                    <!-- SOCIAL MEDIA -->
 
-                            <p class="card-text">
-                                Senior High School
-                            </p>
+                    <div class="text-center mt-5">
 
-                        </div>
+                        <h3 class="fw-bold">
+                            My Social Media
+                        </h3>
 
-                    </div>
-                    <div class="card mb-3">
 
-                        <div class="card-body">
+                        <div class="mt-4">
 
-                            <h5 class="card-title">
-                                Politeknik ATMI Surakarta
-                            </h5>
 
-                            <p class="card-text">
-                                Diploma in Mechatronics Engineering
-                            </p>
+                            <div class="d-flex justify-content-center align-items-center mb-3">
+
+                                <img src="img/ig.png"
+                                    width="30"
+                                    height="30"
+                                    class="me-2"
+                                    alt="Instagram">
+
+                                <a href="https://www.instagram.com/days.ub?stkn=Z3o1Z3pwZ3c4Z3oz"
+                                    class="text-white">
+
+                                    Instagram
+
+                                </a>
+
+                            </div>
+
+
+                            <div class="d-flex justify-content-center align-items-center">
+
+                                <img src="img/linkedin.png"
+                                    width="30"
+                                    height="30"
+                                    class="me-2"
+                                    alt="LinkedIn">
+
+                                <a href="https://www.linkedin.com/in/ilham-hari-subroto-5021b6368?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                                    class="text-white">
+
+                                    LinkedIn
+
+                                </a>
+
+                            </div>
 
                         </div>
 
@@ -475,102 +896,116 @@
 
 
 
-
-
-    <section id="contact" class="py-5 section-blue">
-
-        <div class="container">
-            <div class="text-center mb-5">
-
-                <h2>
-                    Contact Me
-                </h2>
-
-                <p>
-                    Feel free to contact me for more information.
-                </p>
-
-            </div>
-            <div class="row justify-content-center">
-
-                <div class="col-md-8">
-
-                    <form>
-                        <div class="row g-3">
-
-                            <div class="col-md-6">
-
-                                <input type="text" class="form-control" placeholder="Your Name">
-
-                            </div>
-
-
-                            <div class="col-md-6">
-
-                                <input type="email" class="form-control" placeholder="Your Email">
-
-                            </div>
-
-                        </div>
-                        <div class="mt-3">
-
-                            <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
-
-                        </div>
-                        <div class="mt-3">
-
-                            <button type="submit" class="btn btn-primary">
-                                Send Message
-                            </button>
-
-                        </div>
-
-                    </form>
-
-
-
-
-                    <div class="text-center mt-5">
-
-                        <h3>
-                            My Social Media
-                        </h3>
-
-
-                        <div class="mt-4">
-
-                            <div class="d-flex justify-content-center align-items-center mb-3">
-
-                                <img src="F:\MHS-8A1\Ilham_20242027_4\img\ig.png" width="30" class="me-2"
-                                    alt="Instagram">
-
-                                <a href="https://www.instagram.com/days.ub?stkn=Z3o1Z3pwZ3c4Z3oz">
-                                    Instagram
-                                </a>
-
-                            </div>
-
-
-                            <div class="d-flex justify-content-center align-items-center">
-
-                                <img src="img/linkedin.png" width="30" class="me-2" alt="LinkedIn">
-
-                                <a
-                                    href="https://www.linkedin.com/in/ilham-hari-subroto-5021b6368?utm_source=share_via&utm_content=profile&utm_medium=member_android">
-                                    LinkedIn
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-    </section>
+    <!-- ================= BOOTSTRAP JS ================= -->
 
     <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- ================= CHART JS ================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // ================= MENU ACTIVE + AUTOSCROLL =================
+
+        const menu = document.querySelectorAll(".nav-link");
+
+        menu.forEach(function (item) {
+
+            item.addEventListener("click", function (event) {
+
+                event.preventDefault();
+
+                const target = document.querySelector(
+                    item.getAttribute("href")
+                );
+
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+                menu.forEach(function (menuItem) {
+
+                    menuItem.classList.remove("active");
+
+                });
+
+                item.classList.add("active");
+
+            });
+
+        });
+
+
+        // ================= CHART JS =================
+
+        const ctx = document.getElementById("aboutChart");
+
+        new Chart(ctx, {
+
+            type: "bar",
+
+            data: {
+
+                labels: [
+                    "PLC & Automation",
+                    "Electrical Design",
+                    "Electrical Wiring",
+                    "Turning & Milling"
+                ],
+
+                datasets: [{
+
+                    label: "Learning Progress",
+
+                    data: [80, 70, 75, 65],
+
+                    backgroundColor: [
+                        "#172554",
+                        "#1e3a8a",
+                        "#2563eb",
+                        "#60a5fa"
+                    ],
+
+                    borderWidth: 0
+
+                }]
+
+            },
+
+            options: {
+
+                responsive: true,
+
+                plugins: {
+
+                    legend: {
+                        display: true
+                    }
+
+                },
+
+                scales: {
+
+                    y: {
+
+                        beginAtZero: true,
+
+                        max: 100
+
+                    }
+
+                }
+
+            }
+
+        });
+
+    </script>
 
 </body>
 
