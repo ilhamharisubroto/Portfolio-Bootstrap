@@ -1,0 +1,1534 @@
+<?php
+
+include "koneksi.php";
+
+$query = mysqli_query(
+    $koneksi,
+    "SELECT * FROM services"
+);
+
+$skillQuery = mysqli_query(
+    $koneksi,
+    "SELECT * FROM skills"
+);
+
+$skillLabels = [];
+$skillValues = [];
+
+while ($skill = mysqli_fetch_assoc($skillQuery)) {
+
+    $skillLabels[] = $skill['nama'];
+
+    $voteQuery = mysqli_query(
+        $koneksi,
+        "SELECT AVG(rating) AS rata_rata
+         FROM skill_votes
+         WHERE skill_id = " . $skill['id']
+    );
+
+    $voteData = mysqli_fetch_assoc($voteQuery);
+
+    if ($voteData['rata_rata'] === null) {
+
+        $skillValues[] = 0;
+
+    } else {
+
+        $skillValues[] = round(
+            $voteData['rata_rata'],
+            2
+        );
+
+    }
+}
+
+$voteSkillQuery = mysqli_query(
+    $koneksi,
+    "SELECT * FROM skills"
+);
+
+$contactQuery = mysqli_query(
+    $koneksi,
+    "SELECT nama, pesan, tanggal
+     FROM contacts
+     ORDER BY id DESC"
+);
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio Ilham</title>
+
+    <link
+        rel="stylesheet"
+        href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+
+    <link
+        rel="stylesheet"
+        href="bootstrap-5.3.8-dist/css/myy.css">
+
+    <link
+        rel="stylesheet"
+        href="css/my%20css-2.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-custom py-4">
+
+    <div class="container">
+
+        <a
+            class="navbar-brand"
+            href="#home">
+
+            <img
+                src="img/mylogo.png"
+                alt="Logo Ilham Hari Subroto"
+                height="45"
+                style="border-radius: 10px;">
+
+        </a>
+
+        <button
+            class="navbar-toggler bg-light"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarNav">
+
+            <div class="navbar-nav ms-auto gap-2">
+
+                <a
+                    class="nav-link text-white px-3"
+                    href="#home">
+
+                    Home
+
+                </a>
+
+                <a
+                    class="nav-link text-white px-3"
+                    href="#services">
+
+                    Services
+
+                </a>
+
+                <a
+                    class="nav-link text-white px-3"
+                    href="#portfolio">
+
+                    Portfolio
+
+                </a>
+
+                <a
+                    class="nav-link text-white px-3"
+                    href="#about">
+
+                    About
+
+                </a>
+
+                <a
+                    class="nav-link text-white px-3"
+                    href="#contact">
+
+                    Contact
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<section
+    id="home"
+    class="py-5 hero">
+
+    <div class="hero-decoration"></div>
+
+    <div class="hero-decoration-two"></div>
+
+    <div class="container py-5">
+
+        <div class="row align-items-center">
+
+            <div class="col-12 col-md-6">
+
+                <span class="badge-navy">
+
+                    MECHATRONICS ENGINEERING
+
+                </span>
+
+                <h1 class="display-4 fw-bold mt-4">
+
+                    Hello, I'm Ilham
+
+                </h1>
+
+                <p class="lead fw-semibold">
+
+                    Mechatronics Engineering Student
+
+                </p>
+
+                <p class="text-secondary">
+
+                    Interested in automation, electronics,
+                    programming, and engineering.
+
+                </p>
+
+                <div
+                    class="d-flex gap-3 flex-wrap mt-4">
+
+                    <a
+                        href="#services"
+                        class="btn btn-navy px-4 py-2">
+
+                        Explore Services
+
+                    </a>
+
+                    <a
+                        href="#portfolio"
+                        class="btn btn-outline-dark px-4 py-2">
+
+                        View Portfolio
+
+                    </a>
+
+                </div>
+
+                <div class="d-flex gap-4 mt-5">
+
+                    <div>
+
+                        <h4 class="fw-bold mb-0">
+
+                            04
+
+                        </h4>
+
+                        <small class="text-secondary">
+
+                            Services
+
+                        </small>
+
+                    </div>
+
+                    <div>
+
+                        <h4 class="fw-bold mb-0">
+
+                            04
+
+                        </h4>
+
+                        <small class="text-secondary">
+
+                            Projects
+
+                        </small>
+
+                    </div>
+
+                    <div>
+
+                        <h4 class="fw-bold mb-0">
+
+                            01
+
+                        </h4>
+
+                        <small class="text-secondary">
+
+                            Engineering Field
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="col-12 col-md-6 text-center mt-5 mt-md-0">
+
+                <div class="profile-frame">
+
+                    <img
+                        src="img/Foto jas ATMI.jpg"
+                        class="img-fluid rounded-circle shadow-lg hero-image"
+                        alt="Profile">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section
+    id="services"
+    class="py-5">
+
+    <div class="container py-4">
+
+        <div class="text-center mb-5">
+
+            <p class="text-secondary fw-semibold mb-1">
+
+                WHAT I CAN DO
+
+            </p>
+
+            <h2 class="fw-bold">
+
+                My Services
+
+            </h2>
+
+            <div class="section-title-line"></div>
+
+            <p class="text-secondary">
+
+                Engineering skills and services
+                that I can provide.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <?php while ($data = mysqli_fetch_assoc($query)) { ?>
+
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div
+                    class="card service-card h-100 shadow-sm">
+
+                    <div class="card-body p-4">
+
+                        <div
+                            class="d-flex justify-content-between">
+
+                            <div class="service-icon">
+
+                                <?php
+                                echo $data['id'];
+                                ?>
+
+                            </div>
+
+                            <span
+                                class="service-number">
+
+                                <?php
+                                echo str_pad(
+                                    $data['id'],
+                                    2,
+                                    '0',
+                                    STR_PAD_LEFT
+                                );
+                                ?>
+
+                            </span>
+
+                        </div>
+
+                        <h5 class="fw-bold">
+
+                            <?php
+                            echo htmlspecialchars(
+                                $data['judul']
+                            );
+                            ?>
+
+                        </h5>
+
+                        <p class="text-secondary">
+
+                            <?php
+                            echo htmlspecialchars(
+                                $data['deskripsi']
+                            );
+                            ?>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <?php } ?>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section
+    id="portfolio"
+    class="py-5">
+
+    <div class="container py-4">
+
+        <div class="text-center mb-5">
+
+            <p class="text-secondary fw-semibold mb-1">
+
+                MY WORK
+
+            </p>
+
+            <h2 class="fw-bold">
+
+                My Portfolio
+
+            </h2>
+
+            <div class="section-title-line"></div>
+
+            <p class="text-secondary">
+
+                Some of my engineering projects
+                and experiences.
+
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div
+                    class="card portfolio-card h-100 shadow-sm">
+
+                    <img
+                        src="img/otomasi.jpg"
+                        class="card-img-top portfolio-image"
+                        alt="PLC Automation Project">
+
+                    <div class="card-body p-4">
+
+                        <small class="text-secondary">
+
+                            PROJECT 01
+
+                        </small>
+
+                        <h5 class="fw-bold mt-2">
+
+                            PLC & Automation
+
+                        </h5>
+
+                        <p class="text-secondary">
+
+                            PLC programming and industrial
+                            automation project.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div
+                    class="card portfolio-card h-100 shadow-sm">
+
+                    <img
+                        src="img/cswa.jpg"
+                        class="card-img-top portfolio-image"
+                        alt="Electrical Design Project">
+
+                    <div class="card-body p-4">
+
+                        <small class="text-secondary">
+
+                            PROJECT 02
+
+                        </small>
+
+                        <h5 class="fw-bold mt-2">
+
+                            Electrical Design
+
+                        </h5>
+
+                        <p class="text-secondary">
+
+                            Electrical schematic and control
+                            panel design project.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div
+                    class="card portfolio-card h-100 shadow-sm">
+
+                    <img
+                        src="img/wiring.jpg"
+                        class="card-img-top portfolio-image"
+                        alt="Electrical Wiring Project">
+
+                    <div class="card-body p-4">
+
+                        <small class="text-secondary">
+
+                            PROJECT 03
+
+                        </small>
+
+                        <h5 class="fw-bold mt-2">
+
+                            Electrical Wiring
+
+                        </h5>
+
+                        <p class="text-secondary">
+
+                            Control wiring, sensor wiring,
+                            and electrical installation project.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 col-lg-3">
+
+                <div
+                    class="card portfolio-card h-100 shadow-sm">
+
+                    <img
+                        src="img/milling.jpg"
+                        class="card-img-top portfolio-image"
+                        alt="Turning and Milling Project">
+
+                    <div class="card-body p-4">
+
+                        <small class="text-secondary">
+
+                            PROJECT 04
+
+                        </small>
+
+                        <h5 class="fw-bold mt-2">
+
+                            Turning & Milling
+
+                        </h5>
+
+                        <p class="text-secondary">
+
+                            Conventional machining project
+                            involving turning and milling.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section
+    id="about"
+    class="py-5 bg-light">
+
+    <div class="container py-4">
+
+        <div class="text-center mb-5">
+
+            <p class="text-secondary fw-semibold mb-1">
+
+                ABOUT ME
+
+            </p>
+
+            <h2 class="fw-bold">
+
+                About Me
+
+            </h2>
+
+            <div class="section-title-line"></div>
+
+            <p class="text-secondary">
+
+                A short introduction about me.
+
+            </p>
+
+        </div>
+
+        <div class="row g-5">
+
+            <div class="col-12 col-md-6">
+
+                <span class="badge-navy">
+
+                    MECHATRONICS
+
+                </span>
+
+                <h3 class="fw-bold mt-3">
+
+                    Engineering & Technology
+
+                </h3>
+
+                <p class="text-secondary">
+
+                    I am a Mechatronics Engineering
+                    student interested in automation,
+                    electronics, electrical systems,
+                    and programming.
+
+                </p>
+
+                <p class="text-secondary">
+
+                    I enjoy learning and working on
+                    engineering projects that combine
+                    mechanical, electrical, and
+                    programming skills.
+
+                </p>
+
+                <div class="tech-line"></div>
+
+                <div class="row">
+
+                    <div class="col-6">
+
+                        <h5 class="fw-bold">
+
+                            Automation
+
+                        </h5>
+
+                        <p class="text-secondary">
+
+                            PLC and control systems
+
+                        </p>
+
+                    </div>
+
+                    <div class="col-6">
+
+                        <h5 class="fw-bold">
+
+                            Electronics
+
+                        </h5>
+
+                        <p class="text-secondary">
+
+                            Electrical and electronic systems
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-12 col-md-6">
+
+                <h3 class="fw-bold mb-4">
+
+                    Education
+
+                </h3>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <div
+                            class="card education-card shadow-sm">
+
+                            <div class="card-body">
+
+                                <h5 class="fw-bold mb-1">
+
+                                    SDIP Ummahat Simo
+
+                                </h5>
+
+                                <small class="text-secondary">
+
+                                    Elementary School
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div
+                            class="card education-card shadow-sm">
+
+                            <div class="card-body">
+
+                                <h5 class="fw-bold mb-1">
+
+                                    SMPN 1 Simo
+
+                                </h5>
+
+                                <small class="text-secondary">
+
+                                    Junior High School
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div
+                            class="card education-card shadow-sm">
+
+                            <div class="card-body">
+
+                                <h5 class="fw-bold mb-1">
+
+                                    SMAN 1 Simo
+
+                                </h5>
+
+                                <small class="text-secondary">
+
+                                    Senior High School
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div
+                            class="card education-card shadow-sm">
+
+                            <div class="card-body">
+
+                                <h5 class="fw-bold mb-1">
+
+                                    Politeknik ATMI Surakarta
+
+                                </h5>
+
+                                <small class="text-secondary">
+
+                                    Diploma in Mechatronics Engineering
+
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="mt-5 pt-4">
+
+            <h3 class="text-center fw-bold">
+
+                My Skills
+
+            </h3>
+
+            <p class="text-center text-secondary">
+
+                Skill rating based on visitor votes
+
+            </p>
+
+            <div
+                class="card shadow-sm border-0 p-4 mt-4">
+
+                <div class="chart-container">
+
+                    <canvas id="aboutChart"></canvas>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="card shadow-sm border-0 p-4 mt-4">
+
+                <h4 class="fw-bold text-center">
+
+                    Rate My Skills
+
+                </h4>
+
+                <p class="text-secondary text-center">
+
+                    Give a rating from 1 to 5
+                    for my skills.
+
+                </p>
+
+                <form
+                    action="simpan_vote.php"
+                    method="POST">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Skill
+
+                        </label>
+
+                        <select
+                            name="skill_id"
+                            class="form-select"
+                            required>
+
+                            <option value="">
+
+                                Choose a skill
+
+                            </option>
+
+                            <?php while (
+                                $voteSkill =
+                                mysqli_fetch_assoc(
+                                    $voteSkillQuery
+                                )
+                            ) { ?>
+
+                            <option
+                                value="<?php
+                                echo $voteSkill['id'];
+                                ?>">
+
+                                <?php
+                                echo htmlspecialchars(
+                                    $voteSkill['nama']
+                                );
+                                ?>
+
+                            </option>
+
+                            <?php } ?>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+
+                            Rating
+
+                        </label>
+
+                        <select
+                            name="rating"
+                            class="form-select"
+                            required>
+
+                            <option value="">
+
+                                Choose rating
+
+                            </option>
+
+                            <option value="1">
+
+                                1 - Very Poor
+
+                            </option>
+
+                            <option value="2">
+
+                                2 - Poor
+
+                            </option>
+
+                            <option value="3">
+
+                                3 - Average
+
+                            </option>
+
+                            <option value="4">
+
+                                4 - Good
+
+                            </option>
+
+                            <option value="5">
+
+                                5 - Excellent
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="text-center">
+
+                        <button
+                            type="submit"
+                            class="btn btn-navy px-4">
+
+                            Submit Vote
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section
+    id="contact"
+    class="py-5 section-navy text-white">
+
+    <div class="container py-4">
+
+        <div class="text-center mb-5">
+
+            <p class="text-white-50 fw-semibold mb-1">
+
+                GET IN TOUCH
+
+            </p>
+
+            <h2 class="fw-bold">
+
+                Contact Me
+
+            </h2>
+
+            <div class="contact-line"></div>
+
+            <p class="text-white-50">
+
+                Feel free to contact me
+                for more information.
+
+            </p>
+
+        </div>
+
+        <div class="row justify-content-center">
+
+            <div class="col-12 col-md-8">
+
+                <div class="contact-box">
+
+                    <form
+                        action="simpan_contact.php"
+                        method="POST">
+
+                        <div class="row g-3">
+
+                            <div class="col-12 col-md-6">
+
+                                <label class="form-label">
+
+                                    Name
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="nama"
+                                    class="form-control"
+                                    placeholder="Your Name"
+                                    required>
+
+                            </div>
+
+                            <div class="col-12 col-md-6">
+
+                                <label class="form-label">
+
+                                    Email
+
+                                </label>
+
+                                <input
+                                    type="email"
+                                    name="email"
+                                    class="form-control"
+                                    placeholder="Your Email"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mt-3">
+
+                            <label class="form-label">
+
+                                Message
+
+                            </label>
+
+                            <textarea
+                                name="pesan"
+                                class="form-control"
+                                rows="5"
+                                placeholder="Your Message"
+                                required></textarea>
+
+                        </div>
+
+                        <div class="mt-3">
+
+                            <button
+                                type="submit"
+                                class="btn btn-light px-4">
+
+                                Send Message
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <div class="text-center mt-5">
+
+                    <h3 class="fw-bold">
+
+                        My Social Media
+
+                    </h3>
+
+                    <p class="text-white-50 mb-4">
+
+                        Connect with me
+
+                    </p>
+
+                    <div
+                        class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+
+                        <a
+                            href="https://www.instagram.com/days.ub"
+                            target="_blank"
+                            class="social-link">
+
+                            <img
+                                src="img/ig.png"
+                                width="24"
+                                height="24"
+                                alt="Instagram">
+
+                            <span>
+
+                                Instagram
+
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="https://www.linkedin.com/in/ilham-hari-subroto-5021b6368"
+                            target="_blank"
+                            class="social-link">
+
+                            <img
+                                src="img/linkedin.png"
+                                width="24"
+                                height="24"
+                                alt="LinkedIn">
+
+                            <span>
+
+                                LinkedIn
+
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="https://wa.me/628232475666"
+                            target="_blank"
+                            class="social-link">
+
+                            <span class="whatsapp-icon">
+
+                                WA
+
+                            </span>
+
+                            <span>
+
+                                WhatsApp
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mt-5">
+
+                    <h3 class="fw-bold text-center">
+
+                        Recent Comments
+
+                    </h3>
+
+                    <p
+                        class="text-white-50 text-center mb-4">
+
+                        Messages from visitors
+
+                    </p>
+
+                    <div class="text-center mb-4">
+
+                        <button
+                            type="button"
+                            class="btn btn-light px-4"
+                            id="toggleComments">
+
+                            Tampilkan Komentar
+
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="commentHistory"
+                        style="display: none;">
+
+                        <div
+                            class="row justify-content-center">
+
+                            <div
+                                class="col-12 col-md-10 col-lg-8">
+
+                                <?php if (
+                                    mysqli_num_rows(
+                                        $contactQuery
+                                    ) > 0
+                                ) { ?>
+
+                                    <?php while (
+                                        $comment =
+                                        mysqli_fetch_assoc(
+                                            $contactQuery
+                                        )
+                                    ) { ?>
+
+                                    <div
+                                        class="comment-card mb-3">
+
+                                        <div
+                                            class="d-flex justify-content-between align-items-center">
+
+                                            <h6
+                                                class="fw-bold mb-0">
+
+                                                <?php
+                                                echo htmlspecialchars(
+                                                    $comment['nama']
+                                                );
+                                                ?>
+
+                                            </h6>
+
+                                            <small
+                                                class="text-white-50">
+
+                                                <?php
+                                                echo date(
+                                                    "d M Y, H:i",
+                                                    strtotime(
+                                                        $comment['tanggal']
+                                                    )
+                                                );
+                                                ?>
+
+                                            </small>
+
+                                        </div>
+
+                                        <p
+                                            class="mb-0 mt-2 text-white-50">
+
+                                            <?php
+                                            echo htmlspecialchars(
+                                                $comment['pesan']
+                                            );
+                                            ?>
+
+                                        </p>
+
+                                    </div>
+
+                                    <?php } ?>
+
+                                <?php } else { ?>
+
+                                    <div
+                                        class="comment-card text-center">
+
+                                        <p
+                                            class="mb-0 text-white-50">
+
+                                            Belum ada komentar.
+
+                                        </p>
+
+                                    </div>
+
+                                <?php } ?>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="footer-custom">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div
+                class="col-12 col-md-6 text-center text-md-start">
+
+                <h5 class="fw-bold mb-1">
+
+                    Ilham Hari Subroto
+
+                </h5>
+
+                <p class="mb-0">
+
+                    Mechatronics Engineering Student
+
+                </p>
+
+            </div>
+
+            <div
+                class="col-12 col-md-6 text-center text-md-end mt-3 mt-md-0">
+
+                <p class="mb-0">
+
+                    &copy; 2026 Ilham Hari Subroto.
+                    All Rights Reserved.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script
+    src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/chart.js">
+</script>
+
+<script>
+
+const menu =
+    document.querySelectorAll(".nav-link");
+
+menu.forEach(function (item) {
+
+    item.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            const target =
+                document.querySelector(
+                    item.getAttribute("href")
+                );
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+            menu.forEach(
+                function (menuItem) {
+
+                    menuItem.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+            item.classList.add("active");
+
+        }
+    );
+
+});
+
+
+const ctx =
+    document.getElementById("aboutChart");
+
+new Chart(ctx, {
+
+    type: "bar",
+
+    data: {
+
+        labels:
+            <?php
+            echo json_encode(
+                $skillLabels
+            );
+            ?>,
+
+        datasets: [{
+
+            label: "Skill Rating",
+
+            data:
+                <?php
+                echo json_encode(
+                    $skillValues
+                );
+                ?>,
+
+            backgroundColor: [
+                "#172554",
+                "#1e3a8a",
+                "#2563eb",
+                "#60a5fa"
+            ],
+
+            borderWidth: 0
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        maintainAspectRatio: false,
+
+        plugins: {
+
+            legend: {
+
+                display: true
+
+            }
+
+        },
+
+        scales: {
+
+            y: {
+
+                beginAtZero: true,
+
+                max: 5,
+
+                ticks: {
+
+                    stepSize: 1
+
+                }
+
+            }
+
+        }
+
+    }
+
+});
+
+
+const toggleComments =
+    document.getElementById(
+        "toggleComments"
+    );
+
+const commentHistory =
+    document.getElementById(
+        "commentHistory"
+    );
+
+toggleComments.addEventListener(
+    "click",
+    function () {
+
+        if (
+            commentHistory.style.display
+            === "none"
+        ) {
+
+            commentHistory.style.display =
+                "block";
+
+            toggleComments.textContent =
+                "Sembunyikan Komentar";
+
+        } else {
+
+            commentHistory.style.display =
+                "none";
+
+            toggleComments.textContent =
+                "Tampilkan Komentar";
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>
