@@ -1,8 +1,0 @@
-Repository GitHub:
-https://github.com/ilhamharisubroto/Portfolio-Bootstrap
-
-Main Branch:
-main
-
-Development Branch:
-Web-Bootstrap
